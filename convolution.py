@@ -16,7 +16,10 @@ i_transformed = np.copy(i)
 size_x = i_transformed.shape[0]
 size_y = i_transformed.shape[1]
 
+#filter = [ [0, 1, 0], [1, -4, 1], [0, 1, 0]] 
 filter = [ [-1, -2, -1], [0, 0, 0], [1, 2, 1]]
+#filter = [ [-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]
+
 weight  = 1
 
 for x in range(1,size_x-1):
