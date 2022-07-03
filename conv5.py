@@ -1,7 +1,7 @@
 import tensorflow as tf
 
-# TRAINING_DIR = "/Users/aromax/Documents/rps/"
-TRAINING_DIR = "C:/Users/pc/Documents/rps/"
+TRAINING_DIR = "/Users/aromax/Documents/rps/"
+# TRAINING_DIR = "C:/Users/pc/Documents/rps/"
 training_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
     rescale=1./255,
     rotation_range=40,
@@ -12,8 +12,8 @@ training_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
     horizontal_flip=True,
     fill_mode='nearest')
 
-#VALIDATION_DIR = "/Users/aromax/Documents/rps-test-set/"
-VALIDATION_DIR = "C:/Users/pc/Documents/rps-test-set/"
+VALIDATION_DIR = "/Users/aromax/Documents/rps-test-set/"
+# VALIDATION_DIR = "C:/Users/pc/Documents/rps-test-set/"
 
 validation_datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 
