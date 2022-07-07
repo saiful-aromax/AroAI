@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
-# TRAINING_DIR = "/Users/aromax/Documents/rps/"
-TRAINING_DIR = "C:/Users/pc/Documents/rps/"
+TRAINING_DIR = "/Users/aromax/Documents/rps/"
+# TRAINING_DIR = "C:/Users/pc/Documents/rps/"
 training_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
     rescale=1./255,
     rotation_range=40,
@@ -13,8 +13,8 @@ training_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
     horizontal_flip=True,
     fill_mode='nearest')
 
-# VALIDATION_DIR = "/Users/aromax/Documents/rps-test-set/"
-VALIDATION_DIR = "C:/Users/pc/Documents/rps-test-set/"
+VALIDATION_DIR = "/Users/aromax/Documents/rps-test-set/"
+# VALIDATION_DIR = "C:/Users/pc/Documents/rps-test-set/"
 
 validation_datagen = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
 
@@ -61,7 +61,7 @@ model.summary()
 model.compile(loss='categorical_crossentropy',
               optimizer='rmsprop', metrics=['accuracy'])
 
-history = model.fit(train_generator, epochs=5, steps_per_epoch=20,
+history = model.fit(train_generator, epochs=25, steps_per_epoch=20,
                     validation_data=validation_generator, verbose=1, validation_steps=3)
 
 model.save("rps.h5")
