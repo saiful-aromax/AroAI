@@ -1,7 +1,7 @@
 import cv2
 
 trained_face_data = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-webcam = cv2.VideoCapture(0)
+webcam = cv2.VideoCapture('/Users/aromax/Desktop/dholna.mp4')
 
 while True:
     is_success_read, frame = webcam.read()
@@ -12,4 +12,8 @@ while True:
         cv2.rectangle(frame, (x, y), ((x + w), (y+ h)), (0, 255, 0), 2)
         
     cv2.imshow('Face Detection', frame)
-    cv2.waitKey(1)
+    key = cv2.waitKey(1)
+    if key==81 or key ==113:
+        break
+
+webcam.release()
