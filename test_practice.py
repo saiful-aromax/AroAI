@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 A = np.random.rand(100)
 B = np.random.randn(1000)
-C = np.arange(100).reshape(2, 50)
+C = np.arange(100).reshape(4, 25)
 D = np.random.permutation(np.arange(30))
 E = np.arange(30, 70, 3)
 F = np.argwhere(C == 51)
@@ -14,4 +14,4 @@ F = np.argwhere(C == 51)
 # plt.hist(C)
 # plt.show()
 
-print(F)
+print(C[1:4])
