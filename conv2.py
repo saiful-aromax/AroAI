@@ -1,3 +1,5 @@
+# https://colab.research.google.com/github/lmoroney/mlday-tokyo/blob/master/Lab2-Computer-Vision.ipynb
+
 import tensorflow as tf
 mnist = tf.keras.datasets.fashion_mnist
 (training_images, training_labels), (test_images, test_labels) = mnist.load_data()
