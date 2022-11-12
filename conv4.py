@@ -2,13 +2,13 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import os
 
-# rock_dir = os.path.join('/Users/aromax/Documents/rps/rock')
-# paper_dir = os.path.join('/Users/aromax/Documents/rps/paper')
-# scissors_dir = os.path.join('/Users/aromax/Documents/rps/scissors')
+rock_dir = os.path.join('/Users/aromax/Documents/rps/rock')
+paper_dir = os.path.join('/Users/aromax/Documents/rps/paper')
+scissors_dir = os.path.join('/Users/aromax/Documents/rps/scissors')
 
-rock_dir = os.path.join('C:/Users/pc/Documents/rps/rock')
-paper_dir = os.path.join('C:/Users/pc/Documents/rps/paper')
-scissors_dir = os.path.join('C:/Users/pc/Documents/rps/scissors')
+# rock_dir = os.path.join('C:/Users/pc/Documents/rps/rock')
+# paper_dir = os.path.join('C:/Users/pc/Documents/rps/paper')
+# scissors_dir = os.path.join('C:/Users/pc/Documents/rps/scissors')
 
 print('total training rock images:', len(os.listdir(rock_dir)))
 print('total training paper images:', len(os.listdir(paper_dir)))
