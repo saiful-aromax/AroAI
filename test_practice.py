@@ -18,6 +18,7 @@ F = np.argwhere(C == 51)
 # plt.show()
 # plt.hist(C)
 # plt.show()
+# This is TEST
 G = C[1:4]
 
 print(C[1:4])
