@@ -18,7 +18,7 @@ F = np.argwhere(C == 51)
 # plt.show()
 # plt.hist(C)
 # plt.show()
-# This is TEST and this is me
+# This is TEST and this is me also this
 G = C[1:4]
 
 print(C[1:4])
