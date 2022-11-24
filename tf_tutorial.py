@@ -19,7 +19,7 @@ model.fit(training_images, training_labels, epochs=5)
 model.evaluate(test_images, test_labels)
 
 classifications = model.predict(test_images)
-# This is TEST
+# This is TEST and this is working
 
 print(classifications[0])
 print(test_labels[0])
