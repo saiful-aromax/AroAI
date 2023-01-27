@@ -21,6 +21,9 @@ F = np.argwhere(C == 51)
 # This is TEST and this is me also this but things arnt goot
 G = C[1:4]
 
-print(C[1:4])
+li = [1, 2, 3, 4, 5]
+
+print(li[:4].pop())
+print(li[:4])
 
 #This is AROMAX 55 and final TEST and further commit
