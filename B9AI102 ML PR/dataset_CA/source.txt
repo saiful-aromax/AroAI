@@ -1,0 +1,8 @@
+in-vehicle coupon recommendation Data Set
+URL: http://archive.ics.uci.edu/ml/datasets/in-vehicle+coupon+recommendation
+Cargo 2000 Freight Tracking and Tracing Data Set
+URL: http://archive.ics.uci.edu/ml/datasets/Cargo+2000+Freight+Tracking+and+Tracing
+default of credit card clients Data Set 
+URL: http://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients
+Higher Education Students Performance Evaluation Dataset Data Set 
+URL: http://archive.ics.uci.edu/ml/datasets/Higher+Education+Students+Performance+Evaluation+Dataset
