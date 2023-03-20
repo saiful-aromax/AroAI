@@ -8,3 +8,4 @@ Higher Education Students Performance Evaluation Dataset Data Set
 URL: http://archive.ics.uci.edu/ml/datasets/Higher+Education+Students+Performance+Evaluation+Dataset
 heart.csv: https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset/code
 Customers.csv: https://www.kaggle.com/datasets/datascientistanna/customers-dataset
+heart2.csv: https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
