@@ -63,3 +63,6 @@ CREATE
 MATCH (n:Person)-[:FOLLOWS]->(m:Person)
 WHERE n.id = 'Alice'
 RETURN m AS person
+
+MATCH (n:Person {id: 'Alice'})-->(m:Person)
+RETURN m AS node
