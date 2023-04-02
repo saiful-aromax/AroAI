@@ -66,3 +66,4 @@ RETURN m AS person
 
 MATCH (n:Person {id: 'Alice'})-->(m:Person)
 RETURN m AS node
+
