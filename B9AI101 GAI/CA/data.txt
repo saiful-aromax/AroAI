@@ -84,3 +84,11 @@ CALL gds.graph.create('myGraph', 'Family', 'MARRIES');
 CALL gds.betweenness.write('myGraph', { writeProperty: 'betweenness' })
 YIELD centralityDistribution, nodePropertiesWritten
 RETURN centralityDistribution.min AS minimumScore, centralityDistribution.mean AS meanScore, nodePropertiesWritten
+
+CALL gds.graph.create('myGraph', 'Family', 'MARRIAGE')
+
+CALL gds.eigenvector.write('myGraph', {
+  maxIterations: 20,
+  writeProperty: 'eigencentrality'
+})
+YIELD nodePropertiesWritten, ranIterations

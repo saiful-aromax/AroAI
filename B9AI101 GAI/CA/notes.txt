@@ -1,6 +1,8 @@
 Data Source Github: https://github.com/neo4j-contrib/gists/blob/master/other/BankFraudDetection.adoc
 Fraud Detection Source: https://neo4j.com/graphgists/bank-fraud-detection/
 
+Username/Password for database: recommendations
+
 
 //Data
 CREATE (accountHolder1:AccountHolder {
