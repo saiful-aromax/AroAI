@@ -77,18 +77,62 @@ CREATE
 (GINORI)-[:MARRIES]->(ALBIZZI);
 
 
+//Added 16 labels, created 16 nodes, set 16 properties, created 40 relationships, completed after 376 ms.
 
 
-Betweeness:
-CALL gds.graph.create('myGraph', 'Family', 'MARRIES');
-CALL gds.betweenness.write('myGraph', { writeProperty: 'betweenness' })
+//Degree Centrality
+
+CALL gds.degree.write({
+  nodeProjection: 'Family',
+  relationshipProjection: {
+    MARRIES: {
+      type: 'MARRIES',
+      orientation: 'NATURAL'
+    }
+  },
+  writeProperty: 'degree_centrality_marriage'
+});
+//Final
+CALL gds.degree.write('marriageRelationGraph', {writeProperty: 'degree_centrality_marriage'});
+
+//Closeness Centrality
+
+CALL gds.alpha.closeness.write({
+  nodeProjection: 'Family',
+  relationshipProjection: 'MARRIES',
+  writeProperty: 'closeness_centrality_marriage2'
+}) YIELD nodes, writeProperty;
+
+//Final
+CALL gds.alpha.closeness.write('marriageRelationGraph', {writeProperty: 'closeness_centrality_marriage'})YIELD nodes, writeProperty;;
+
+// Betweeness Centrality
+CALL gds.graph.create('marriageRelationGraph', 'Family', 'MARRIES');
+CALL gds.betweenness.write('marriageRelationGraph', { writeProperty: 'betweenness_centrality_marriage' })
 YIELD centralityDistribution, nodePropertiesWritten
-RETURN centralityDistribution.min AS minimumScore, centralityDistribution.mean AS meanScore, nodePropertiesWritten
+RETURN centralityDistribution.min AS minimumScore, centralityDistribution.mean AS meanScore, nodePropertiesWritten;
 
-CALL gds.graph.create('myGraph', 'Family', 'MARRIAGE')
+//Final
+CALL gds.betweenness.write('marriageRelationGraph', { writeProperty: 'betweenness_centrality_marriage' })
+YIELD centralityDistribution, nodePropertiesWritten
+RETURN centralityDistribution.min AS minimumScore, centralityDistribution.mean AS meanScore, nodePropertiesWritten;
 
-CALL gds.eigenvector.write('myGraph', {
+//Eigenvector Centrality
+//Final
+CALL gds.eigenvector.write('marriageRelationGraph', {
+  maxIterations: 20,
+  writeProperty: 'eigen_centrality_marriage'
+})
+YIELD nodePropertiesWritten, ranIterations;
+
+
+
+
+
+CALL gds.graph.create('marriageRelatedGraph', 'Family', 'MARRIAGE');
+
+CALL gds.eigenvector.write('marriageRelatedGraph', {
   maxIterations: 20,
   writeProperty: 'eigencentrality'
 })
-YIELD nodePropertiesWritten, ranIterations
+YIELD nodePropertiesWritten, ranIterations;
