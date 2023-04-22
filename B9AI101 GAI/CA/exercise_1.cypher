@@ -1,3 +1,5 @@
+//Creating nodes and relationships
+
 CREATE
 (PAZZI:Family {id:"PAZZI"}),
 (SALVIATI:Family {id:"SALVIATI"}),
