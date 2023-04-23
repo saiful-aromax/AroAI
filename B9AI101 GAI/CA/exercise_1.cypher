@@ -81,9 +81,11 @@ CREATE
 
 //Added 16 labels, created 16 nodes, set 16 properties, created 40 relationships, completed after 376 ms.
 
-//Creating Graph: "marriageRelationGraph"
+//Creating Graph
 
 CALL gds.graph.create('marriageRelationGraph', 'Family', 'MARRIES');
+
+CALL gds.graph.create('marriageGraphBetweenness', 'Family', {MARRIES: {orientation: 'UNDIRECTED'}});
 
 //Degree Centrality
 
@@ -95,7 +97,7 @@ CALL gds.alpha.closeness.write('marriageRelationGraph', {writeProperty: 'closene
 
 //Betweeness Centrality
 
-CALL gds.betweenness.write('marriageRelationGraph', { writeProperty: 'betweenness_centrality_marriage' })
+CALL gds.betweenness.write('marriageGraphBetweenness', { writeProperty: 'betweenness_centrality_marriage' })
 YIELD centralityDistribution, nodePropertiesWritten
 RETURN centralityDistribution.min AS minimumScore, centralityDistribution.mean AS meanScore, nodePropertiesWritten;
 
