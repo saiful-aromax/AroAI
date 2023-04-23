@@ -83,9 +83,7 @@ CREATE
 
 //Creating Graph
 
-CALL gds.graph.create('marriageRelationGraph', 'Family', 'MARRIES');
-
-CALL gds.graph.create('marriageGraphBetweenness', 'Family', {MARRIES: {orientation: 'UNDIRECTED'}});
+CALL gds.graph.create('marriageRelationGraph', 'Family', {MARRIES: {orientation: 'UNDIRECTED'}});
 
 //Degree Centrality
 
@@ -93,11 +91,11 @@ CALL gds.degree.write('marriageRelationGraph', {writeProperty: 'degree_centralit
 
 //Closeness Centrality
 
-CALL gds.alpha.closeness.write('marriageRelationGraph', {writeProperty: 'closeness_centrality_marriage'})YIELD nodes, writeProperty;;
+CALL gds.alpha.closeness.write('marriageRelationGraph', {writeProperty: 'closeness_centrality_marriage'})YIELD nodes, writeProperty;
 
 //Betweeness Centrality
 
-CALL gds.betweenness.write('marriageGraphBetweenness', { writeProperty: 'betweenness_centrality_marriage' })
+CALL gds.betweenness.write('marriageRelationGraph', { writeProperty: 'betweenness_centrality_marriage' })
 YIELD centralityDistribution, nodePropertiesWritten
 RETURN centralityDistribution.min AS minimumScore, centralityDistribution.mean AS meanScore, nodePropertiesWritten;
 

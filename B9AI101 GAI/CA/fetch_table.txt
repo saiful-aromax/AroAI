@@ -1,0 +1,26 @@
+Degree Centrality:
+
+MATCH (n) WHERE (n.degree_centrality_marriage) IS NOT NULL 
+RETURN DISTINCT n.name as Family, n.degree_centrality_marriage AS `Degree Centrality` ORDER BY `Degree Centrality` DESC;
+
+
+Cloness Centrality:
+
+MATCH (n) WHERE (n.closeness_centrality_marriage) IS NOT NULL 
+RETURN DISTINCT n.name as Family, n.closeness_centrality_marriage AS `Cloness Centrality` ORDER BY `Cloness Centrality` DESC;
+
+
+Betweenness Centrality:
+
+MATCH (n) WHERE (n.betweenness_centrality_marriage) IS NOT NULL 
+RETURN DISTINCT n.name as Family, n.betweenness_centrality_marriage AS `Betweenness Centrality` ORDER BY `Betweenness Centrality` DESC;
+
+Eigenvector Centrality:
+
+MATCH (n) WHERE (n.eigen_centrality_marriage) IS NOT NULL 
+RETURN DISTINCT n.name as Family, n.eigen_centrality_marriage AS `Score` ORDER BY `Score` DESC;
+
+PageRank:
+
+MATCH (n) WHERE (n.pagerank_marriage) IS NOT NULL 
+RETURN DISTINCT n.name as Family, n.pagerank_marriage AS `Score` ORDER BY `Score` DESC;
