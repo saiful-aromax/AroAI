@@ -1,0 +1,6 @@
+Covid Data.csv: https://www.kaggle.com/datasets/meirnizri/covid19-dataset
+exams.csv: https://www.kaggle.com/datasets/whenamancodes/students-performance-in-exams
+diabetes_data.csv: https://www.kaggle.com/datasets/prosperchuks/health-dataset
+weather_history_bangladesh.csv: https://www.kaggle.com/datasets/talhabu/bangladesh-weather-history
+airlines_delay.csv: https://www.kaggle.com/datasets/ulrikthygepedersen/airlines-delay
+waterQuality1.csv: https://www.kaggle.com/datasets/mssmartypants/water-quality
