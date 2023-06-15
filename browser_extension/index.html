@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="window.css" />
+</head>
+
+<body>
+  <script>
+    if ('chrome' in window && 'tabs' in chrome) {
+      chrome.tabs.query({}, function (tabs) {
+        tabs.forEach(function (tab) {
+          console.log(tab.url);
+        });
+      });
+    } else if ('browser' in window && 'tabs' in browser) {
+      browser.tabs.query({}).then(function (tabs) {
+        tabs.forEach(function (tab) {
+          console.log(tab.url);
+        });
+      });
+    } else {
+      console.log('Unsupported browser.');
+    }
+
+    browser.tabs.query({}).then(function(tabs) {
+      tabs.forEach(function(tab) {
+        console.log(tab.url);
+      });
+    });
+
+
+    <!-- alert("HELLO") -->
+  </script>
+</body>
+
+</html>
