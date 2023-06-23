@@ -9,30 +9,25 @@
 
 <body>
   <script>
-    if ('chrome' in window && 'tabs' in chrome) {
-      chrome.tabs.query({}, function (tabs) {
-        tabs.forEach(function (tab) {
-          console.log(tab.url);
-        });
-      });
-    } else if ('browser' in window && 'tabs' in browser) {
-      browser.tabs.query({}).then(function (tabs) {
-        tabs.forEach(function (tab) {
-          console.log(tab.url);
-        });
-      });
-    } else {
-      console.log('Unsupported browser.');
+
+    chrome.windows.getAll({ populate: true }, getAllOpenWindows);
+    function getAllOpenWindows(winData) {
+
+      var tabs = [];
+      for (var i in winData) {
+        if (winData[i].focused === true) {
+          var winTabs = winData[i].tabs;
+          var totTabs = winTabs.length;
+          for (var j = 0; j < totTabs; j++) {
+            tabs.push(winTabs[j].url);
+          }
+        }
+      }
+      console.log(tabs);
     }
 
-    browser.tabs.query({}).then(function(tabs) {
-      tabs.forEach(function(tab) {
-        console.log(tab.url);
-      });
-    });
+    
 
-
-    <!-- alert("HELLO") -->
   </script>
 </body>
 
